@@ -86,3 +86,7 @@ For enabling and configuring the distributed sqlite backend, see:
 
 When recording data to a sqlite database, the location of the database can be
 defined with :ref:`ARA_DATABASE_NAME <api-configuration:ARA_DATABASE_NAME>`.
+
+For this feature to be working you must start ARA server by specifying the ``distributed_sqlite`` function:
+
+``gunicorn --workers=4 --access-logfile - --bind 0.0.0.0:8000 ara.server.wsgi:distributed_sqlite``
